@@ -1,0 +1,6 @@
+Assessment 1 will be available on 21 March 2023. Ending on 11th May
+
+The following content will be covered in Assessment 1:
+- Algorithm analysis - analyse algorithms in terms of execution time.
+- Stacks and Queues (Chap 17)
+- Searching and sorting algorithms (Chap 18)

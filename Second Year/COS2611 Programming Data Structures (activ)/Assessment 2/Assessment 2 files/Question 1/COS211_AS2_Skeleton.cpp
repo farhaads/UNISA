@@ -5,8 +5,8 @@
 #include<vector>
 
 //Add your student name and student number
-//
-//
+//Farhaad Sallie
+//Student Number: 15436543
 //
 
 

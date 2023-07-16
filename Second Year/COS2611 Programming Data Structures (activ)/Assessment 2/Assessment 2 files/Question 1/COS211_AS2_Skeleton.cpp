@@ -63,24 +63,44 @@ public:
          } //insert the root node
         else {
             TreeNode* temp = root;
+            (*temp).left;
             while (temp != NULL) {
                 if (new_node->value == temp->value) {
+                    /*
+                    Node already exists, this BST does not allow duplication. Node get added
+                    */
                     cout << "Value Already exist," <<
                         "Insert another value!" << endl;
                     return;
                 }
                 else if ((new_node->value < temp->value) && (temp->left == NULL)) {
+                    /*
+                    If the new node is less than the node it is being compared to AND there are no children on said compared node
+                    add the new node on as a leaf down the left branch. 
+                    */
                     temp->left = new_node;  //insert value to the left
                     break;
                 }
                 else if (new_node->value < temp->value) {
+                    /*
+                    If the new node is less than the node it is being compared to AND but there is a child node down the left branch
+                    traverse down the left branch
+                    */
                     temp = temp->left;
                 }
                 else if ((new_node->value > temp->value) && (temp->right == NULL)) {
+                    /*
+                    If the new node is greater than the node it is being compared to AND there are no children on said compared node
+                    add the new node on as a leaf down the right branch. 
+                    */
                     temp->right = new_node;  //insert value to the right
                     break;
                 }
                 else {
+                    /*
+                    If the new node is greater than the node it is being compared to AND but there is a child node down the right branch
+                    traverse down the right branch
+                    */
                     temp = temp->right;
                 }
             }

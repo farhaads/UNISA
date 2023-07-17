@@ -109,14 +109,15 @@ public:
     int heightOfTree(TreeNode* r) {
         //provide the code to determine the height of the tree.
 		//return value to the calling procedure 
-        if(r == NULL) {
-            return -1;
-        }
-            int leftHeight = heightOfTree(r->left);
-            int rightHeight = heightOfTree(r->right);
-            
-            return 0 + max(leftHeight, rightHeight);
-        
+        if(r != NULL) {
+             int leftHeight = heightOfTree(r->left);
+             int rightHeight = heightOfTree(r->right);
+             return (leftHeight > rightHeight)?1+leftHeight: 1+rightHeight;
+         }
+         else{
+             return -1;
+         }
+        //return      (int)(r == NULL)*(-1)     | (r != NULL)*(         1 + (heightOfTree(r->left) > heightOfTree(r->right))*(heightOfTree(r->left))         + (heightOfTree(r->left) <= heightOfTree(r->right))*(heightOfTree(r->right))      );
         }
     
     
@@ -124,37 +125,35 @@ public:
     {
 		//provide the code for the preorder binary tree traversal function 
 		//print the results to the console
-		if (r == NULL) {
-        return;
-    }
-        cout << r->value << " ";
-        printPreorder(r->left);
-        printPreorder(r->right);
+        
+		if (r != NULL) {
+            cout << r->value << " ";
+            printPreorder(r->left);
+            printPreorder(r->right);
+        }
+        
     }//printPreorder
 
     void printInorder(TreeNode* r) //  (Left, current node, Right)
     {
         //provide the code for the inorder binary tree traversal function 
 		//print the results to the console
-        if (root == NULL) {
-        return;
+        if (r != NULL) {
+            printInorder(r->left);
+            cout << r->value << " ";
+            printInorder(r->right);
         }
-        printInorder(r->left);
-        cout << r->value << " ";
-        printInorder(r->right);
-		
     } //printInorder
 
     void printPostorder(TreeNode* r) //left, right, root
     {
         //provide the code for the postorder binary tree traversal function 
 		//print the results to the console
-        if (r == NULL) {
-        return;
+        if (r != NULL) {
+            printPostorder(r->left);
+            printPostorder(r->right);
+            cout << (r->value) << " ";
         }
-        printPostorder(r->left);
-        printPostorder(r->right);
-        cout << r->value << " ";
     }// printPostorder
 
     TreeNode *searchForNode(int v) {

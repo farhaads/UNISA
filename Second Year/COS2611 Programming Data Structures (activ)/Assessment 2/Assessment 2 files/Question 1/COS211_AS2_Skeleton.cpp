@@ -110,14 +110,13 @@ public:
         //provide the code to determine the height of the tree.
 		//return value to the calling procedure 
         if(r != NULL) {
-            int leftHeight = heightOfTree(r->left);
-            int rightHeight = heightOfTree(r->right);
-            return (leftHeight > rightHeight)?1+leftHeight: 1+rightHeight;
-            
-        }
-        else{
-            return -1;
-        }
+             int leftHeight = heightOfTree(r->left);
+             int rightHeight = heightOfTree(r->right);
+             return (leftHeight > rightHeight)?1+leftHeight: 1+rightHeight;
+         }
+         else{
+             return -1;
+         }
         }
     
     
